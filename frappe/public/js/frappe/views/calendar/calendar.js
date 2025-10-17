@@ -362,8 +362,8 @@ frappe.views.Calendar = class Calendar {
 	get_args(start, end) {
 		var args = {
 			doctype: this.doctype,
-			start: this.get_system_datetime(start),
-			end: this.get_system_datetime(end),
+			start: moment(this.get_system_datetime(start)).format('YYYY-MM-DD'),
+			end: moment(this.get_system_datetime(end)).format('YYYY-MM-DD'),
 			fields: this.fields,
 			filters: this.list_view.filter_area.get(),
 			field_map: this.field_map,
